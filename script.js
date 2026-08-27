@@ -27,25 +27,4 @@ function typeMessage(){
   timer=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length)clearInterval(timer)},38);
 }
 
-/* Faster, denser confetti burst */
-function burstFast(){
-  const c=document.getElementById("confetti"),ctx=c.getContext("2d");
-  c.width=innerWidth;c.height=innerHeight;
-  const pieces=Array.from({length:180},()=>({
-    x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.28+(Math.random()-.5)*50,
-    vx:(Math.random()-.5)*22,vy:-Math.random()*18-7,g:.42,
-    s:5+Math.random()*8,a:1,rot:Math.random()*6.28,vr:(Math.random()-.5)*.5
-  }));
-  let frame=0;
-  function draw(){
-    ctx.clearRect(0,0,c.width,c.height);
-    pieces.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.992;p.rot+=p.vr;p.a-=.012;
-      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.max(0,p.a);
-      ctx.font=p.s*3+"px serif";ctx.fillText(["💕","✨","🎀","🌸","💖","🎉"][Math.floor(Math.random()*6)],0,0);ctx.restore();
-    });
-    if(frame++<90)requestAnimationFrame(draw);else ctx.clearRect(0,0,c.width,c.height);
-  }
-  draw();
-}
-addEventListener("resize",()=>{const c=document.getElementById("confetti");c.width=innerWidth;c.height=innerHeight});
+
