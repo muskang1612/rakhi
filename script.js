@@ -3,10 +3,10 @@ function show(n){
   Object.values(screens).forEach(s=>s.classList.remove("active"));
   screens[n].classList.add("active");
   window.scrollTo({top:0,behavior:"smooth"});
-  if(n===3){typeMessage();burstFast(); setTimeout(()=>{const a=document.getElementById("song"); a.play().catch(()=>{});},350);}
+  if(n===3){typeMessage();setTimeout(()=>{const a=document.getElementById("song"); a.play().catch(()=>{});},350);}
 }
 const yes=document.getElementById("yesBtn"),no=document.getElementById("noBtn"),hint=document.getElementById("noMessage");
-yes.onclick=()=>{burstFast();show(2)};
+yes.onclick=()=>show(2);
 function escapeNo(){
   no.style.position="fixed";
   const x=Math.max(8,Math.random()*(innerWidth-no.offsetWidth-16));
