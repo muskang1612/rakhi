@@ -1,0 +1,45 @@
+*{box-sizing:border-box}
+:root{--pink:#f4477d;--hot:#d82e68;--rose:#8c3658;--ink:#492637}
+html,body{margin:0;min-height:100%;font-family:Poppins,sans-serif;color:var(--ink)}
+body{min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 12% 12%,#ffd9e6 0,transparent 27%),radial-gradient(circle at 90% 85%,#ffe9b8 0,transparent 28%),linear-gradient(135deg,#fff3f7,#fffaf2)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:10}
+.ambient{position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:30px 30px;opacity:.28}
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;padding:22px 14px;position:relative}
+.screen.active{display:flex;animation:pageIn .65s cubic-bezier(.2,.8,.2,1)}
+.card{width:min(94vw,700px);text-align:center;background:rgba(255,255,255,.79);border:1px solid rgba(255,255,255,.95);border-radius:34px;box-shadow:0 25px 90px rgba(112,39,69,.17);backdrop-filter:blur(16px);position:relative;overflow:hidden}
+.hero{padding:52px 25px 43px;min-height:555px;display:flex;flex-direction:column;justify-content:center}
+.mini-rakhi,.final-rakhi{font-size:70px;animation:float 2.4s ease-in-out infinite}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#a36178;margin:10px 0}
+h1,h2{font-family:"Baloo 2",cursive;line-height:1.02;margin:10px 0}
+h1{font-size:clamp(43px,9vw,72px);color:var(--rose)}
+h1 span,h2 span{color:var(--pink)}
+.hero-copy,.subcopy{font-size:15px;line-height:1.8;color:#866173}
+.choice-area{display:flex;justify-content:center;gap:16px;min-height:60px;margin-top:27px}
+.btn{border:0;border-radius:999px;padding:16px 32px;font:700 16px Poppins,sans-serif;cursor:pointer;transition:.22s}
+.btn:hover{transform:translateY(-4px) scale(1.04)}
+.yes{background:linear-gradient(135deg,#ff5b8d,#d92868);color:white;box-shadow:0 13px 28px #d9286840}
+.no{background:#ffe3ec;color:#944b67;position:relative}
+.no-message{height:28px;color:#cf3c70;font-size:12px;font-weight:600}
+.tap-note{font-size:11px;color:#ad7a8c;margin-top:8px}
+.petal{position:absolute;font-size:27px;animation:float 3s ease-in-out infinite}
+.p1{left:9%;top:15%}.p2{right:11%;top:19%;animation-delay:.5s}.p3{left:12%;bottom:15%;animation-delay:1s}.p4{right:9%;bottom:18%;animation-delay:1.5s}
+.memories{padding:37px 22px 40px}.top-decor{font-size:18px;letter-spacing:4px}
+.memories h2,.final-card h2{font-size:clamp(34px,7vw,53px);color:var(--rose)}
+.polaroid{width:min(100%,585px);margin:25px auto 18px;background:#fff;padding:10px 10px 17px;box-shadow:0 18px 45px #6e294015;transform:rotate(-1deg);position:relative}
+.polaroid:before{content:"";position:absolute;width:80px;height:22px;background:#ffd9a6aa;left:50%;top:-10px;transform:translateX(-50%) rotate(-3deg)}
+.polaroid img{width:100%;display:block;border-radius:3px}
+.photo-caption{font-family:"Baloo 2",cursive;font-size:17px;color:#9a506c;margin-top:8px}
+.sticker-row{font-size:22px;letter-spacing:3px;margin:13px 0 23px}.reveal{background:var(--rose);color:#fff;box-shadow:0 12px 28px #71334d30}
+.final-card{padding:32px 21px 35px;max-width:710px}
+.letter{background:linear-gradient(145deg,#fffdf9,#fff4f7);border:1px solid #f7d9e4;border-radius:24px;padding:25px 17px 28px;box-shadow:inset 0 0 40px #f8d9e530}
+.letter-flower{font-size:31px}.letter h2{font-size:clamp(29px,6vw,45px)}.line{height:1px;width:55%;background:#edb8ca;margin:20px auto}
+.typewriter{min-height:65px;font-family:"Baloo 2",cursive;font-size:23px;line-height:1.45;color:#71334d;margin:0 auto}
+.big-wish{font-family:"Baloo 2",cursive;font-size:clamp(29px,6vw,43px);color:var(--hot);margin-top:17px}
+.signature{font-size:18px;font-weight:600;color:#984d6b;line-height:1.7}.signature small{font-size:11px;font-weight:400;color:#a77a8c}
+.song-card{display:flex;align-items:center;text-align:left;gap:14px;background:#fff0f5;border:1px solid #ffd1df;border-radius:19px;margin:22px auto 10px;padding:14px 16px;width:min(100%,540px)}
+.vinyl{font-size:35px;animation:spin 4s linear infinite}.song-title{font-weight:700;color:#6c304c}.song-line{font-size:12px;color:#9b6679;margin-top:3px}
+audio{width:min(100%,540px);margin-top:3px}.small-btn{border:0;background:none;color:#a04464;font:12px Poppins,sans-serif;cursor:pointer;margin-top:9px}
+@keyframes pageIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(3deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:500px){.hero{min-height:510px;padding:40px 18px}.card{border-radius:27px}.choice-area{gap:10px}.btn{padding:14px 24px}}

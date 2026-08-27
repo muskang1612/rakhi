@@ -1,0 +1,51 @@
+const screens=[1,2,3].reduce((o,n)=>(o[n]=document.getElementById("screen"+n),o),{});
+function show(n){
+  Object.values(screens).forEach(s=>s.classList.remove("active"));
+  screens[n].classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(n===3){typeMessage();burstFast(); setTimeout(()=>{const a=document.getElementById("song"); a.play().catch(()=>{});},350);}
+}
+const yes=document.getElementById("yesBtn"),no=document.getElementById("noBtn"),hint=document.getElementById("noMessage");
+yes.onclick=()=>{burstFast();show(2)};
+function escapeNo(){
+  no.style.position="fixed";
+  const x=Math.max(8,Math.random()*(innerWidth-no.offsetWidth-16));
+  const y=Math.max(8,Math.random()*(innerHeight-no.offsetHeight-16));
+  no.style.left=x+"px";no.style.top=y+"px";
+  hint.textContent=["Hmm… NO is unavailable today. 😂","Nice try! The NO button has left the chat. 😌","Wrong answer, Bhagini. 😏💕","The universe says YES. ✨"][Math.floor(Math.random()*4)];
+}
+no.addEventListener("mouseenter",escapeNo);
+no.addEventListener("touchstart",e=>{e.preventDefault();escapeNo()});
+no.addEventListener("click",e=>{e.preventDefault();escapeNo()});
+document.getElementById("revealBtn").onclick=()=>show(3);
+document.getElementById("restartBtn").onclick=()=>{document.getElementById("song").pause();show(1)};
+
+const text="I love you, my Adarniya, Pujniya, Respected Bhagini. ❤️";
+let timer;
+function typeMessage(){
+  clearInterval(timer);const el=document.getElementById("message");el.textContent="";let i=0;
+  timer=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length)clearInterval(timer)},38);
+}
+
+/* Faster, denser confetti burst */
+function burstFast(){
+  const c=document.getElementById("confetti"),ctx=c.getContext("2d");
+  c.width=innerWidth;c.height=innerHeight;
+  const pieces=Array.from({length:180},()=>({
+    x:innerWidth/2+(Math.random()-.5)*120,y:innerHeight*.28+(Math.random()-.5)*50,
+    vx:(Math.random()-.5)*22,vy:-Math.random()*18-7,g:.42,
+    s:5+Math.random()*8,a:1,rot:Math.random()*6.28,vr:(Math.random()-.5)*.5
+  }));
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pieces.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.992;p.rot+=p.vr;p.a-=.012;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.max(0,p.a);
+      ctx.font=p.s*3+"px serif";ctx.fillText(["💕","✨","🎀","🌸","💖","🎉"][Math.floor(Math.random()*6)],0,0);ctx.restore();
+    });
+    if(frame++<90)requestAnimationFrame(draw);else ctx.clearRect(0,0,c.width,c.height);
+  }
+  draw();
+}
+addEventListener("resize",()=>{const c=document.getElementById("confetti");c.width=innerWidth;c.height=innerHeight});
