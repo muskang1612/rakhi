@@ -1,79 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Adarniya Bhagini 🎀</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Bhagini 🎀</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="ambient"></div>
+
+<!-- =========================
+     PAGE 1
+     ========================= -->
 
 <section class="screen active" id="screen1">
-  <div class="petal p1">🌸</div><div class="petal p2">✨</div>
-  <div class="petal p3">💕</div><div class="petal p4">🎀</div>
-  <div class="card hero">
-    <div class="mini-rakhi">🎀</div>
-    <div class="eyebrow">A VERY IMPORTANT RAKHI QUESTION</div>
-    <h1>Are you ready<br>for this <span>Rakhi?</span> 🥹</h1>
-    <p class="hero-copy">There is only one correct answer.<br>Choose wisely, <i>dear Bhagini.</i> 😌</p>
-    <div class="choice-area">
-      <button class="btn yes" id="yesBtn">YES 💖</button>
-      <button class="btn no" id="noBtn">NO 😏</button>
+
+    <div class="petal p1">🌸</div>
+    <div class="petal p2">✨</div>
+    <div class="petal p3">💕</div>
+    <div class="petal p4">🎀</div>
+
+    <div class="card hero">
+
+        <!-- RAKHI ANIMATION -->
+
+        <div class="rakhi-wrapper">
+
+            <div class="rakhi-glow"></div>
+
+            <img
+                src="rakhi.gif"
+                class="main-rakhi"
+                alt="Beautiful Rakhi"
+            >
+
+        </div>
+
+
+        <div class="eyebrow">
+            A VERY IMPORTANT RAKHI QUESTION
+        </div>
+
+
+        <h1>
+            Are you ready<br>
+            for this <span>Rakhi?</span> 🥹
+        </h1>
+
+
+        <p class="hero-copy">
+            There is only one correct answer.<br>
+            Choose wisely, <i>dear Bhagini.</i> 😌
+        </p>
+
+
+        <div class="choice-area">
+
+            <button class="btn yes" id="yesBtn">
+                YES 💖
+            </button>
+
+            <button class="btn no" id="noBtn">
+                NO 😏
+            </button>
+
+        </div>
+
+
+        <div id="noMessage" class="no-message"></div>
+
+
+        <div class="tap-note">
+            ✨ Your answer may unlock something special ✨
+        </div>
+
     </div>
-    <div id="noMessage" class="no-message"></div>
-    <div class="tap-note">✨ Your answer may unlock something special ✨</div>
-  </div>
+
 </section>
+
+
+
+<!-- =========================
+     PAGE 2
+     ========================= -->
 
 <section class="screen" id="screen2">
-  <div class="card memories">
-    <div class="top-decor">✦ 💕 ✦ 🎀 ✦ 💕 ✦</div>
-    <div class="eyebrow">YOU SAID YES! 🥰</div>
-    <h2>A little museum<br>of <span>us</span> 📸</h2>
-    <p class="subcopy">A few memories, a lot of love,<br>and one permanently annoying sibling. 😂</p>
-    <div class="polaroid">
-      <div class="tape"></div>
-      <img src="sister-collage.jpg" alt="Sister memories collage">
-      <div class="photo-caption">our chaos • our memories • our bond ❤️</div>
+
+    <div class="card memories">
+
+        <div class="top-decor">
+            ✦ 💕 ✦ 🎀 ✦ 💕 ✦
+        </div>
+
+
+        <div class="eyebrow">
+            YOU SAID YES! 🥰
+        </div>
+
+
+        <h2>
+            A little museum<br>
+            of <span>us</span> 📸
+        </h2>
+
+
+        <p class="subcopy">
+            A few memories, a lot of love,<br>
+            and one permanently annoying sibling. 😂
+        </p>
+
+
+        <!-- ORIGINAL COLLAGE -->
+
+        <div class="polaroid">
+
+            <div class="tape"></div>
+
+            <img
+                src="sister-collage.jpg"
+                alt="Sister memories collage"
+            >
+
+            <div class="photo-caption">
+                our chaos • our memories • our bond ❤️
+            </div>
+
+        </div>
+
+
+        <div class="sticker-row">
+            🦋 ✨ 🫶 🌸 💗 🎀 ✨ 🦋
+        </div>
+
+
+        <button class="btn reveal" id="revealBtn">
+            I Have One More Thing… 💌
+        </button>
+
     </div>
-    <div class="sticker-row">🦋 ✨ 🫶 🌸 💗 🎀 ✨ 🦋</div>
-    <button class="btn reveal" id="revealBtn">I Have One More Thing… 💌</button>
-  </div>
+
 </section>
+
+
+
+<!-- =========================
+     PAGE 3
+     ========================= -->
 
 <section class="screen" id="screen3">
-  <div class="card final-card">
-    <div class="final-rakhi">🎀</div>
-    <div class="eyebrow">OPEN WITH LOVE</div>
-    <div class="letter">
-      <div class="letter-flower">🌸</div>
-      <h2>To my<br><span>आदरणीय • पूजनीय • Respected Bhagini</span> ❤️</h2>
-      <div class="line"></div>
-      <p class="typewriter" id="message"></p>
-      <div class="big-wish">Happy Raksha Bandhan! 🎉</div>
-      <p class="signature">I love you. ❤️<br><small>— Your favourite sibling, obviously. 😌</small></p>
+
+    <div class="card final-card">
+
+        <div class="final-rakhi">
+            🎀
+        </div>
+
+
+        <div class="eyebrow">
+            OPEN WITH LOVE
+        </div>
+
+
+        <div class="letter">
+
+            <div class="letter-flower">
+                🌸
+            </div>
+
+
+            <h2>
+                To my<br>
+
+                <span>
+                    आदरणीय • पूजनीय • Respected Bhagini
+                </span>
+
+                ❤️
+            </h2>
+
+
+            <div class="line"></div>
+
+
+            <p
+                class="typewriter"
+                id="message">
+            </p>
+
+
+            <div class="big-wish">
+                Happy Raksha Bandhan! 🎉
+            </div>
+
+
+            <p class="signature">
+
+                I love you. ❤️
+
+                <br>
+
+                <small>
+                    — Your favourite sibling, obviously. 😌
+                </small>
+
+            </p>
+
+        </div>
+
+
+
+        <!-- TWO SISTERS RAKHI ANIMATION -->
+
+        <div class="sisters-animation">
+
+            <div class="sparkle sparkle1">
+                ✨
+            </div>
+
+            <div class="sparkle sparkle2">
+                💖
+            </div>
+
+            <div class="sparkle sparkle3">
+                ✨
+            </div>
+
+            <div class="sparkle sparkle4">
+                🌸
+            </div>
+
+
+            <img
+                src="sisters-rakhi.gif"
+                class="sisters-rakhi"
+                alt="Two sisters tying Rakhi"
+            >
+
+        </div>
+
+
+
+        <!-- SONG -->
+
+        <div class="song-card">
+
+            <div class="vinyl">
+                🎵
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Nach Meri Jaan
+                </div>
+
+                <div class="song-line">
+                    “Tu meri hook kumka ikka…” 🎶
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <audio
+            id="song"
+            controls
+            preload="auto">
+
+            <source
+                src="nach-meri-jaan.mp3"
+                type="audio/mpeg">
+
+            Your browser does not support audio playback.
+
+        </audio>
+
+
+        <button
+            class="small-btn"
+            id="restartBtn">
+
+            ↺ Start the surprise again
+
+        </button>
+
     </div>
 
-    <div class="song-card">
-      <div class="vinyl">🎵</div>
-      <div class="song-info">
-        <div class="song-title">Nach Meri Jaan</div>
-        <div class="song-line">“Tu meri hook kumka ikka…” 🎶</div>
-      </div>
-    </div>
-
-    <audio id="song" controls preload="auto">
-      <source src="nach-meri-jaan.mp3" type="audio/mpeg">
-      Your browser does not support audio playback.
-    </audio>
-
-    <button class="small-btn" id="restartBtn">↺ Start the surprise again</button>
-  </div>
 </section>
+
+
 <script src="script.js"></script>
+
 </body>
 </html>
